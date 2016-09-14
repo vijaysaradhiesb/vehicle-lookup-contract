@@ -67,14 +67,15 @@
             </xs:element>
             <xs:element name="Year" minOccurs="0" maxOccurs="1" nillable="false" type="xs:int"/>
             <xs:element name="NumberOfDoors" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
-                <xs:annotation>
+                <!--<xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
                             @com.hubio.services.external.systems.mappings.api.RefDataMappingAware(refDataType="")
                         </annox:annotate>
                     </xs:appinfo>
-                </xs:annotation>
+                </xs:annotation>-->
             </xs:element>
+            <xs:element name="RegistrationDate" minOccurs="0" maxOccurs="1" nillable="false" type="xs:date"/>
             <xs:element name="NumberOfSeats" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="RegistrationNumber" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="Transmission" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
@@ -91,28 +92,28 @@
             <xs:element name="GrossWeight" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="VehicleIdentificationNumber" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="PowerWeightRatio" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="vehicleType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="engineType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="color" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
-                <xs:annotation>
+            <xs:element name="VehicleType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="EngineType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="Color" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
+                <!--<xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
                             @com.hubio.services.external.systems.mappings.api.RefDataMappingAware(refDataType="")
                         </annox:annotate>
                     </xs:appinfo>
-                </xs:annotation>
+                </xs:annotation>-->
             </xs:element>
-            <xs:element name="insuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
-                <xs:annotation>
+            <xs:element name="InsuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
+               <!-- <xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
                             @com.hubio.services.external.systems.mappings.api.RefDataMappingAware(refDataType="")
                         </annox:annotate>
                     </xs:appinfo>
-                </xs:annotation>
+                </xs:annotation>-->
             </xs:element>
-            <xs:element name="mileage" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="engineSize" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="Mileage" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="EngineSize" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
