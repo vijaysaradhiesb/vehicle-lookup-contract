@@ -7,6 +7,14 @@
            targetNamespace="http://hubio.com/integration/services/vehicle"
            xmlns="http://hubio.com/integration/services/vehicle">
 
+    <xs:element name="VehicleLookupRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchValue" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="VehicleLookupResponse">
         <xs:complexType>
             <xs:sequence>
