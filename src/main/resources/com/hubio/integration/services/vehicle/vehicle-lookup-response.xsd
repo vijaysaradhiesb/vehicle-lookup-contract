@@ -7,14 +7,6 @@
            targetNamespace="http://hubio.com/integration/services/vehicle"
            xmlns="http://hubio.com/integration/services/vehicle">
 
-    <xs:element name="VehicleLookupRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="searchValue" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
     <xs:element name="VehicleLookupResponse">
         <xs:complexType>
             <xs:sequence>
@@ -74,7 +66,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="Year" minOccurs="0" maxOccurs="1" nillable="false" type="xs:int"/>
-            <xs:element name="NumberOfDoors" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
+            <xs:element name="NumberOfDoors" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
                 <!--<xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
@@ -82,7 +74,6 @@
                         </annox:annotate>
                     </xs:appinfo>
                 </xs:annotation>-->
-            </xs:element>
             <xs:element name="RegistrationDate" minOccurs="0" maxOccurs="1" nillable="false" type="xs:date"/>
             <xs:element name="NumberOfSeats" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="RegistrationNumber" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
@@ -102,7 +93,7 @@
             <xs:element name="PowerWeightRatio" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="VehicleType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="EngineType" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="Color" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
+            <xs:element name="Color" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
                 <!--<xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
@@ -110,8 +101,7 @@
                         </annox:annotate>
                     </xs:appinfo>
                 </xs:annotation>-->
-            </xs:element>
-            <xs:element name="InsuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string">
+            <xs:element name="InsuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
                <!-- <xs:annotation>
                     <xs:appinfo>
                         <annox:annotate target="field">
@@ -119,7 +109,6 @@
                         </annox:annotate>
                     </xs:appinfo>
                 </xs:annotation>-->
-            </xs:element>
             <xs:element name="Mileage" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="EngineSize" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
         </xs:sequence>
