@@ -30,7 +30,6 @@
                 <artifactId>external-systems-mappings-api</artifactId>
                 <version>${external-systems-mappings-service.version}</version>
             </dependency>
-
     </dependencies>
 
     <build>

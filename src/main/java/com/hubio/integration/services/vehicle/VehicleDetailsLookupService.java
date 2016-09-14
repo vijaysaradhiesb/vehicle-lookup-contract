@@ -14,5 +14,5 @@ public interface VehicleDetailsLookupService {
     @Path("/retrieveVehicleDetails")
     @Consumes({"text/xml"})
     @Produces({"text/xml"})
-    VehicleLookupResponse  retrieveVehicleDetails(String vrm);
+    VehicleLookupResponse  retrieveVehicleDetails(VehicleLookupRequest vehicleLookupRequest);
 }
