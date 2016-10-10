@@ -64,7 +64,7 @@
                 </xs:annotation>-->
             </xs:element>
             <xs:element name="Value" minOccurs="0" maxOccurs="1" nillable="false" type="xs:decimal"/>
-            <xs:element name="VehicleLeftRightDrive" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="VehicleLeftRightDrive" minOccurs="0" maxOccurs="1" nillable="false" type="RefData"/>
             <xs:element name="GrossWeight" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="VehicleIdentificationNumber" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="PowerWeightRatio" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
@@ -87,7 +87,7 @@
                 </xs:annotation>-->
             </xs:element>
             <xs:element name="Color" minOccurs="0" maxOccurs="1" nillable="false" type="RefData"/>
-            <xs:element name="InsuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
+            <xs:element name="InsuranceGroup" minOccurs="0" maxOccurs="1" nillable="false" type="RefData"/>
             <xs:element name="Mileage" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="EngineSize" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
         </xs:sequence>
