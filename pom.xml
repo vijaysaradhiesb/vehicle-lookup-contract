@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.quindell.integration.bundles</groupId>
         <artifactId>integration-parent-621090</artifactId>
-        <version>1.0.2.release-16.3</version>
+        <version>1.0.3.release-16.3</version>
     </parent>
 
     <groupId>com.hubio.integration.contract</groupId>
