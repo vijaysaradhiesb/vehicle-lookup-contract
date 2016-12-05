@@ -1,0 +1,1 @@
+PUBLIC "http://hubio.com/integration/services/contracts/common" "maven:com.hubio.integration.contract:contracts-common::!/com/hubio/integration/services/contracts/common/contracts-common.xsd"

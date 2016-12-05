@@ -95,4 +95,5 @@ Temporary Items
 .apdisk
 
 # Hubio custom rules
-.iml
+*.iml
+.idea
