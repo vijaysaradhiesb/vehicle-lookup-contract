@@ -12,7 +12,7 @@
                 <xs:extension base="common:ContractRequest">
                     <xs:sequence>
                         <xs:choice>
-                            <xs:element name="VRM" type="xs:string"/>
+                            <xs:element name="vrm" type="xs:string"/>
                         </xs:choice>
                     </xs:sequence>
                 </xs:extension>
