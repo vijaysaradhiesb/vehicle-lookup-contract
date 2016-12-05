@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.hubio.integration.contract</groupId>
             <artifactId>contracts-common</artifactId>
-            <version>1.0.5.master</version> <!-- FIXME: this should be a range, but there is some strange problem with Nexus right now, so this should be fixed in future as now there is no time to fix nexus -->
+            <version>1.0.6.master</version> <!-- FIXME: this should be a range, but there is some strange problem with Nexus right now, so this should be fixed in future as now there is no time to fix nexus -->
         </dependency>
     </dependencies>
 
@@ -77,9 +77,9 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>com.hubio.integration.service</groupId>
-                        <artifactId>external-systems-mappings-api</artifactId>
-                        <version>${external-systems-mappings-service.version}</version>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-basics-annotate</artifactId>
+                        <version>1.0.2</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -93,8 +93,13 @@
                     </dependency>
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics-annotate</artifactId>
-                        <version>1.0.2</version>
+                        <artifactId>jaxb2-basics-tools</artifactId>
+                        <version>0.10.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.hubio.integration.service</groupId>
+                        <artifactId>external-systems-mappings-api</artifactId>
+                        <version>${external-systems-mappings-service.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
