@@ -48,6 +48,52 @@
                 </configuration>
             </plugin>
 
+            <!-- Next 3 plugins are responsible for extracting common schema, copying resources and generating stubs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.hubio.integration.contract</groupId>
+                                    <artifactId>contracts-common</artifactId>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/schemas</outputDirectory>
+                                    <includes>**/*.xsd</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <copy file="${basedir}/target/schemas/com/hubio/integration/services/contracts/common/contracts-common.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/contracts-common.xsd"/>
+                                <copy file="${basedir}/src/main/resources/com/hubio/integration/services/vehicle/vehicle-lookup.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/vehicle-lookup.xsd"/>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
@@ -60,7 +106,7 @@
                         <configuration>
                             <extension>true</extension>
                             <strict>false</strict>
-                            <schemaDirectory>src/main/resources/com/hubio/integration/services/vehicle/</schemaDirectory>
+                            <schemaDirectory>${basedir}/target/classes/com/hubio/integration/services/vehicle/</schemaDirectory>
                             <catalog>src/main/resources/com/hubio/integration/services/vehicle/contracts-common.cat</catalog>
                             <useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
                             <args>
@@ -103,6 +149,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
