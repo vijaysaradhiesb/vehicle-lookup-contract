@@ -26,7 +26,6 @@
                 <xs:extension base="common:ContractResponse">
                     <xs:sequence>
                         <xs:element name="vehicleInfo" minOccurs="0" maxOccurs="1" type="Vehicle"/>
-                        <xs:element name="errorMessage" minOccurs="0" maxOccurs="1" type="xs:string"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
