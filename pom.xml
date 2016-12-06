@@ -11,12 +11,12 @@
     </parent>
 
     <groupId>com.hubio.integration.contract</groupId>
-    <artifactId>vehicle-details-lookup-contract</artifactId>
+    <artifactId>vehicle-lookup-contract</artifactId>
     <version>2.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>${organization.name} :: ${module.name}</name>
     <properties>
-        <module.name>Vehicle Details Lookup Contract</module.name>
+        <module.name>Vehicle Lookup Contract</module.name>
         <organization.name>Hubio</organization.name>
     </properties>
 
