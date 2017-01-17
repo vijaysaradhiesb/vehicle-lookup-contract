@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.hubio.integration.bundles</groupId>
-        <artifactId>integration-parent-621159</artifactId>
-        <version>1.0.2.release-17.1</version>
+        <artifactId>integration-parent-630187</artifactId>
+        <version>[1.1,1.2)</version>
     </parent>
 
     <groupId>com.hubio.integration.contract</groupId>
     <artifactId>vehicle-lookup-contract</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <version>3.1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>${organization.name} :: ${module.name}</name>
     <properties>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.hubio.integration.contract</groupId>
             <artifactId>contracts-common</artifactId>
-            <version>1.0.6.master</version> <!-- FIXME: this should be a range, but there is some strange problem with Nexus right now, so this should be fixed in future as now there is no time to fix nexus -->
+            <version>${contracts-common.version}</version>
         </dependency>
     </dependencies>
 
@@ -52,7 +52,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
                 <executions>
                     <execution>
                         <id>unpack</id>
@@ -78,7 +77,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
