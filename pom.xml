@@ -57,19 +57,14 @@
                         <id>unpack</id>
                         <phase>generate-sources</phase>
                         <goals>
-                            <goal>unpack</goal>
+                            <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.hubio.integration.contract</groupId>
-                                    <artifactId>contracts-common</artifactId>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}/schemas</outputDirectory>
-                                    <includes>**/*.xsd</includes>
-                                </artifactItem>
-                            </artifactItems>
+                            <includeArtifactIds>
+                                contracts-common
+                            </includeArtifactIds>
+                            <outputDirectory>${project.build.directory}/schemas</outputDirectory>
+                            <includes>**/*.xsd</includes>
                         </configuration>
                     </execution>
                 </executions>

@@ -15,7 +15,7 @@ public interface VehicleDetailsLookupService {
 
     @POST
     @Path("/retrieveVehicleDetails")
-    @Consumes({MediaType.TEXT_XML})
-    @Produces({MediaType.TEXT_XML})
+    @Consumes({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     ContractResponse retrieveVehicleDetails(VehicleLookupRequest vehicleLookupRequest);
 }
