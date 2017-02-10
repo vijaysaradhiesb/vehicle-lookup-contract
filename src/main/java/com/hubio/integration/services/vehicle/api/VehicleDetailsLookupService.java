@@ -1,4 +1,4 @@
-package com.hubio.integration.services.vehicle;
+package com.hubio.integration.services.vehicle.api;
 
 import com.hubio.integration.services.contracts.common.ContractResponse;
 

@@ -80,8 +80,8 @@
                         </goals>
                         <configuration>
                             <tasks>
-                                <copy file="${basedir}/target/schemas/com/hubio/integration/services/contracts/common/contracts-common.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/contracts-common.xsd"/>
-                                <copy file="${basedir}/src/main/resources/com/hubio/integration/services/vehicle/vehicle-lookup.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/vehicle-lookup.xsd"/>
+                                <copy file="${basedir}/target/schemas/com/hubio/integration/services/contracts/common/contracts-common.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/api/contracts-common.xsd"/>
+                                <copy file="${basedir}/src/main/resources/com/hubio/integration/services/vehicle/api/vehicle-lookup.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/api/vehicle-lookup.xsd"/>
                             </tasks>
                         </configuration>
                     </execution>
@@ -99,8 +99,8 @@
                         <configuration>
                             <extension>true</extension>
                             <strict>false</strict>
-                            <schemaDirectory>${basedir}/target/classes/com/hubio/integration/services/vehicle/</schemaDirectory>
-                            <catalog>src/main/resources/com/hubio/integration/services/vehicle/contracts-common.cat</catalog>
+                            <schemaDirectory>${basedir}/target/classes/com/hubio/integration/services/vehicle/api/</schemaDirectory>
+                            <catalog>src/main/resources/com/hubio/integration/services/vehicle/api/contracts-common.cat</catalog>
                             <useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
                             <args>
                                 <arg>-Xannotate</arg>
@@ -152,7 +152,7 @@
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
                         <Export-Package>
-                            com.hubio.integration.services.vehicle
+                            com.hubio.integration.services.vehicle.api
                         </Export-Package>
                     </instructions>
                 </configuration>

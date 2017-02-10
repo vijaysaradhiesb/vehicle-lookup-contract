@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:common="http://hubio.com/integration/services/contracts/common"
-           targetNamespace="http://hubio.com/integration/services/vehicle"
-           xmlns="http://hubio.com/integration/services/vehicle">
+           targetNamespace="http://hubio.com/integration/services/vehicle/api"
+           xmlns="http://hubio.com/integration/services/vehicle/api">
 
     <xs:import schemaLocation="contracts-common.xsd" namespace="http://hubio.com/integration/services/contracts/common"/>
 
