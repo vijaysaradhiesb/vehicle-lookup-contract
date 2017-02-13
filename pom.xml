@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.hubio.integration.bundles</groupId>
-        <artifactId>integration-parent-630187</artifactId>
-        <version>[1.1,1.2)</version>
+        <groupId>com.hubio.integration.service</groupId>
+        <artifactId>integration-contracts-parent</artifactId>
+        <version>[1.0,2)</version>
     </parent>
 
     <groupId>com.hubio.integration.contract</groupId>
@@ -18,6 +18,11 @@
     <properties>
         <module.name>Vehicle Lookup Contract</module.name>
         <organization.name>Hubio</organization.name>
+
+        <!-- package name under which: model will be generated, exposed in OSGi, processed by DTO plugin -->
+        <hubio.model.package>com.hubio.integration.services.vehicle.api</hubio.model.package>
+        <!-- schema directory containing this project XSDs as well as all others from dependent projects like Contract Commons, has to be in target -->
+        <hubio.model.xsd.directory>${basedir}/target/classes/com/hubio/integration/services/vehicle/api/</hubio.model.xsd.directory>
     </properties>
 
     <dependencies>
@@ -26,136 +31,34 @@
             <artifactId>camel-cxf</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.hubio.integration.service</groupId>
-            <artifactId>external-systems-mappings-api</artifactId>
-            <version>${external-systems-mappings-service.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.hubio.integration.contract</groupId>
             <artifactId>contracts-common</artifactId>
             <version>${contracts-common.version}</version>
+            <scope>provided</scope> <!-- Contract Commons has to be always provided, as UI projects has to use DTO version of it -->
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
 
-            <!-- Next 3 plugins are responsible for extracting common schema, copying resources and generating stubs -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeArtifactIds>
-                                contracts-common
-                            </includeArtifactIds>
-                            <outputDirectory>${project.build.directory}/schemas</outputDirectory>
-                            <includes>**/*.xsd</includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- Copying is actually the only plugin we have to configure here. Rest is done by plugins defined in parent project -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>generate-sources</phase>
+                        <phase>initialize</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tasks>
+                            <target>
                                 <copy file="${basedir}/target/schemas/com/hubio/integration/services/contracts/common/contracts-common.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/api/contracts-common.xsd"/>
                                 <copy file="${basedir}/src/main/resources/com/hubio/integration/services/vehicle/api/vehicle-lookup.xsd" tofile="${basedir}/target/classes/com/hubio/integration/services/vehicle/api/vehicle-lookup.xsd"/>
-                            </tasks>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.13.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <extension>true</extension>
-                            <strict>false</strict>
-                            <schemaDirectory>${basedir}/target/classes/com/hubio/integration/services/vehicle/api/</schemaDirectory>
-                            <catalog>src/main/resources/com/hubio/integration/services/vehicle/api/contracts-common.cat</catalog>
-                            <useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
-                            <args>
-                                <arg>-Xannotate</arg>
-                                <arg>-Xvalue-constructor</arg>
-                                <arg>-XtoString</arg>
-                                <arg>-Xequals</arg>
-                                <arg>-XhashCode</arg>
-                                <arg>-Xcopyable</arg>
-                                <arg>-Xmergeable</arg>
-                            </args>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics-annotate</artifactId>
-                        <version>1.0.2</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-value-constructor</artifactId>
-                        <version>3.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics</artifactId>
-                        <version>0.10.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics-tools</artifactId>
-                        <version>0.10.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.hubio.integration.service</groupId>
-                        <artifactId>external-systems-mappings-api</artifactId>
-                        <version>${external-systems-mappings-service.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>*</Import-Package>
-                        <Export-Package>
-                            com.hubio.integration.services.vehicle.api
-                        </Export-Package>
-                    </instructions>
-                </configuration>
             </plugin>
         </plugins>
     </build>
