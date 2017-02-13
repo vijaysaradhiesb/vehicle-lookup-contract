@@ -40,7 +40,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="VRMLengthWrongFailure">
+    <xs:element name="VRMInvalidFailure">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="common:FaultResponse"/>
