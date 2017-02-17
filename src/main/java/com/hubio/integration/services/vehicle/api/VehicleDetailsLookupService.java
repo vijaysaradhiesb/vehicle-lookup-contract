@@ -1,7 +1,5 @@
 package com.hubio.integration.services.vehicle.api;
 
-import com.hubio.integration.services.contracts.common.ContractResponse;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,5 +15,5 @@ public interface VehicleDetailsLookupService {
     @Path("/retrieveVehicleDetails")
     @Consumes({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
-    ContractResponse retrieveVehicleDetails(VehicleLookupRequest vehicleLookupRequest);
+    AbstractVehicleLookupResponse retrieveVehicleDetails(AbstractVehicleLookupRequest vehicleLookupRequest);
 }

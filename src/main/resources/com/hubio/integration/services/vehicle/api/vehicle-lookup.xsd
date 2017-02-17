@@ -6,10 +6,25 @@
 
     <xs:import schemaLocation="contracts-common.xsd" namespace="http://hubio.com/integration/services/contracts/common"/>
 
+    <xs:complexType name="AbstractVehicleLookupRequest" abstract="true">
+    </xs:complexType>
+    <xs:complexType name="AbstractVehicleLookupResponse" abstract="true">
+    </xs:complexType>
+
+    <xs:complexType name="FaultResponse">
+        <xs:complexContent>
+            <xs:extension base="AbstractVehicleLookupResponse">
+                <xs:sequence>
+                    <xs:element name="faultDetails" minOccurs="0" type="common:faultDetails"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:element name="VehicleLookupRequest">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="common:ContractRequest">
+                <xs:extension base="AbstractVehicleLookupRequest">
                     <xs:sequence>
                         <xs:choice>
                             <xs:element name="vrm" type="xs:string"/>
@@ -23,7 +38,7 @@
     <xs:element name="VehicleLookupResponse">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="common:ContractResponse">
+                <xs:extension base="AbstractVehicleLookupResponse">
                     <xs:sequence>
                         <xs:element name="vehicleInfo" minOccurs="0" maxOccurs="1" type="Vehicle"/>
                     </xs:sequence>
@@ -35,7 +50,7 @@
     <xs:element name="VehicleNotFoundFailure">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="common:FaultResponse"/>
+                <xs:extension base="FaultResponse"/>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
@@ -43,7 +58,7 @@
     <xs:element name="VRMInvalidFailure">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="common:FaultResponse"/>
+                <xs:extension base="FaultResponse"/>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
@@ -87,11 +102,9 @@
                   </xs:annotation>-->
             </xs:element>
             <xs:element name="Value" minOccurs="0" maxOccurs="1" nillable="false" type="xs:decimal"/>
-            <xs:element name="VehicleLeftRightDrive" minOccurs="0" maxOccurs="1" nillable="false"
-                        type="common:RefData"/>
+            <xs:element name="VehicleLeftRightDrive" minOccurs="0" maxOccurs="1" nillable="false" type="common:RefData"/>
             <xs:element name="GrossWeight" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
-            <xs:element name="VehicleIdentificationNumber" minOccurs="0" maxOccurs="1" nillable="false"
-                        type="xs:string"/>
+            <xs:element name="VehicleIdentificationNumber" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="PowerWeightRatio" minOccurs="0" maxOccurs="1" nillable="false" type="xs:string"/>
             <xs:element name="VehicleType" minOccurs="0" maxOccurs="1" nillable="false" type="common:RefData">
                 <!-- <xs:annotation>
