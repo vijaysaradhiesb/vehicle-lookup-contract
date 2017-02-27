@@ -15,5 +15,5 @@ public interface VehicleDetailsLookupService {
     @Path("/retrieveVehicleDetails")
     @Consumes({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
-    AbstractVehicleLookupResponse retrieveVehicleDetails(AbstractVehicleLookupRequest vehicleLookupRequest);
+    AbstractVehicleLookupResponse retrieveVehicleDetails(VehicleLookupRequest vehicleLookupRequest);
 }

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:extensionBindingPrefixes="annox"
+           jaxb:version="2.0"
+           xmlns:annox="http://annox.dev.java.net"
            xmlns:common="http://hubio.com/integration/services/contracts/common"
            targetNamespace="http://hubio.com/integration/services/vehicle/api"
            xmlns="http://hubio.com/integration/services/vehicle/api">
@@ -49,6 +53,13 @@
 
     <xs:element name="VehicleNotFoundFailure">
         <xs:complexType>
+            <xs:annotation>
+                <xs:appinfo>
+                    <annox:annotate target="field">
+                        @com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.NOT_FOUND)
+                    </annox:annotate>
+                </xs:appinfo>
+            </xs:annotation>
             <xs:complexContent>
                 <xs:extension base="FaultResponse"/>
             </xs:complexContent>
@@ -57,6 +68,13 @@
 
     <xs:element name="VRMInvalidFailure">
         <xs:complexType>
+            <xs:annotation>
+                <xs:appinfo>
+                    <annox:annotate target="field">
+                        @com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.BAD_REQUEST)
+                    </annox:annotate>
+                </xs:appinfo>
+            </xs:annotation>
             <xs:complexContent>
                 <xs:extension base="FaultResponse"/>
             </xs:complexContent>
