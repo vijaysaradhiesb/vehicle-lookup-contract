@@ -27,6 +27,13 @@
 
     <xs:element name="VehicleLookupRequest">
         <xs:complexType>
+            <xs:annotation>
+                <xs:appinfo>
+                    <annox:annotate target="field">
+                        @com.hubio.integration.services.contracts.common.rest.Request
+                    </annox:annotate>
+                </xs:appinfo>
+            </xs:annotation>
             <xs:complexContent>
                 <xs:extension base="AbstractVehicleLookupRequest">
                     <xs:sequence>
@@ -41,6 +48,13 @@
 
     <xs:element name="VehicleLookupResponse">
         <xs:complexType>
+            <xs:annotation>
+                <xs:appinfo>
+                    <annox:annotate target="field">
+                        @com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.OK)
+                    </annox:annotate>
+                </xs:appinfo>
+            </xs:annotation>
             <xs:complexContent>
                 <xs:extension base="AbstractVehicleLookupResponse">
                     <xs:sequence>
