@@ -97,3 +97,5 @@ Temporary Items
 # Hubio custom rules
 *.iml
 .idea
+
+build.metadata
