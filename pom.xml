@@ -28,7 +28,7 @@
     <scm>
         <connection>${scm.protocol}${scm.git.protocol}${scm.host}:${scm.ssh.port}/iic/vehicle-lookup-contract.git</connection>
         <developerConnection>${scm.protocol}${scm.git.protocol}${scm.host}:${scm.ssh.port}/iic/vehicle-lookup-contract.git</developerConnection>
-        <url>http://${scm.host}:${scm.http.port}/projects/iic/repos/vehicle-lookup-contract/</url>
+        <url>http://${scm.host}:${scm.http.port}/projects/iic/vehicle-lookup-contract/</url>
     </scm>
 
     <dependencies>
