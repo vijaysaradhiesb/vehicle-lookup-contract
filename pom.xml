@@ -11,7 +11,7 @@
 
     <groupId>com.hubio.integration.contract</groupId>
     <artifactId>vehicle-lookup-contract</artifactId>
-    <version>3.1.2</version>
+    <version>3.1.3-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>${organization.name} :: ${module.name}</name>
     <properties>
@@ -28,7 +28,7 @@
         <connection>${scm.protocol}${scm.git.protocol}${scm.host}:${scm.ssh.port}/iic/vehicle-lookup-contract.git</connection>
         <developerConnection>${scm.protocol}${scm.git.protocol}${scm.host}:${scm.ssh.port}/iic/vehicle-lookup-contract.git</developerConnection>
         <url>http://${scm.host}:${scm.http.port}/projects/iic/vehicle-lookup-contract/</url>
-      <tag>vehicle-lookup-contract-3.1.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <dependencies>
