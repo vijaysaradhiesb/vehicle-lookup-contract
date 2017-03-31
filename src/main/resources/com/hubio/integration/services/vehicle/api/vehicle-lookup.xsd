@@ -59,7 +59,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="VRMInvalidFailure">
+    <xs:element name="VRNInvalidFailure">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="FaultResponse"/>
