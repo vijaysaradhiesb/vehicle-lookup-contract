@@ -31,7 +31,7 @@
                 <xs:extension base="AbstractVehicleLookupRequest">
                     <xs:sequence>
                         <xs:choice>
-                            <xs:element name="vrm" type="xs:string"/>
+                            <xs:element name="vrn" type="xs:string"/>
                         </xs:choice>
                     </xs:sequence>
                 </xs:extension>
