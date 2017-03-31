@@ -18,7 +18,6 @@ public interface VehicleDetailsLookupService {
 
     @GET
     @Path("/retrieveVehicleDetails/{vrn}")
-    @Consumes({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     AbstractVehicleLookupResponse retrieveVehicleDetails(@PathParam("vrn") @Header("vrn") String vrn);
 }
