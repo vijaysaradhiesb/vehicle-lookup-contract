@@ -19,7 +19,7 @@
         <jxb:bindings node="xs:element[@name='VehicleNotFoundFailure']/xs:complexType">
             <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.NOT_FOUND)</annox:annotateClass>
         </jxb:bindings>
-        <jxb:bindings node="xs:element[@name='VRNInvalidFailure']/xs:complexType">
+        <jxb:bindings node="xs:element[@name='VRMInvalidFailure']/xs:complexType">
             <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.BAD_REQUEST)</annox:annotateClass>
         </jxb:bindings>
         <jxb:bindings node="xs:element[@name='InternalServerError']/xs:complexType">
