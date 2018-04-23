@@ -94,7 +94,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Hubio custom rules
+# integ custom rules
 *.iml
 .idea
 

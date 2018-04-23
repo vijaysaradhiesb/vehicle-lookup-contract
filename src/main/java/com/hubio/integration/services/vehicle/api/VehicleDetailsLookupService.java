@@ -1,4 +1,4 @@
-package com.hubio.integration.services.vehicle.api;
+package com.integ.integration.services.vehicle.api;
 
 import org.apache.camel.Header;
 

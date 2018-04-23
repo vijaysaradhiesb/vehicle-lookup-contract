@@ -4,11 +4,11 @@
            jaxb:extensionBindingPrefixes="annox"
            jaxb:version="2.0"
            xmlns:annox="http://annox.dev.java.net"
-           xmlns:common="http://hubio.com/integration/services/contracts/common"
-           targetNamespace="http://hubio.com/integration/services/vehicle/api"
-           xmlns="http://hubio.com/integration/services/vehicle/api">
+           xmlns:common="http://integ.com/integration/services/contracts/common"
+           targetNamespace="http://integ.com/integration/services/vehicle/api"
+           xmlns="http://integ.com/integration/services/vehicle/api">
 
-    <xs:import schemaLocation="contracts-common.xsd" namespace="http://hubio.com/integration/services/contracts/common"/>
+    <xs:import schemaLocation="contracts-common.xsd" namespace="http://integ.com/integration/services/contracts/common"/>
 
     <xs:complexType name="AbstractVehicleLookupRequest" abstract="true">
     </xs:complexType>

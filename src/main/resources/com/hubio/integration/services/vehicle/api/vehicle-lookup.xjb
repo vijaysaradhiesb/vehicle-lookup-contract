@@ -3,7 +3,7 @@
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:common="http://hubio.com/integration/services/contracts/common"
+        xmlns:common="http://integ.com/integration/services/contracts/common"
         xmlns:annox="http://annox.dev.java.net"
         xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
         jxb:extensionBindingPrefixes="xjc annox" version="2.1">
@@ -11,48 +11,48 @@
     <jxb:bindings schemaLocation="vehicle-lookup.xsd" node="/xs:schema">
 
         <jxb:bindings node="xs:element[@name='VehicleLookupRequest']/xs:complexType">
-            <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.Request</annox:annotateClass>
+            <annox:annotateClass>@com.integ.integration.services.contracts.common.rest.Request</annox:annotateClass>
         </jxb:bindings>
         <jxb:bindings node="xs:element[@name='VehicleLookupResponse']/xs:complexType">
-            <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.OK)</annox:annotateClass>
+            <annox:annotateClass>@com.integ.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.OK)</annox:annotateClass>
         </jxb:bindings>
         <jxb:bindings node="xs:element[@name='VehicleNotFoundFailure']/xs:complexType">
-            <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.NOT_FOUND)</annox:annotateClass>
+            <annox:annotateClass>@com.integ.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.NOT_FOUND)</annox:annotateClass>
         </jxb:bindings>
         <jxb:bindings node="xs:element[@name='VRMInvalidFailure']/xs:complexType">
-            <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.BAD_REQUEST)</annox:annotateClass>
+            <annox:annotateClass>@com.integ.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.BAD_REQUEST)</annox:annotateClass>
         </jxb:bindings>
         <jxb:bindings node="xs:element[@name='InternalServerError']/xs:complexType">
-            <annox:annotateClass>@com.hubio.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.INTERNAL_SERVER_ERROR)</annox:annotateClass>
+            <annox:annotateClass>@com.integ.integration.services.contracts.common.rest.ResponseCode(value = javax.ws.rs.core.Response.Status.INTERNAL_SERVER_ERROR)</annox:annotateClass>
         </jxb:bindings>
 
 
         <jxb:bindings node="//xs:element[@name='BodyType' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_BODY_TYPE")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_BODY_TYPE")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Make' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_MAKE")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_MAKE")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Model' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_MODEL")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_MODEL")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Transmission' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_TRANSMISSION")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_TRANSMISSION")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='VehicleLeftRightDrive' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_LEFT_RIGHT")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_LEFT_RIGHT")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='VehicleType' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_TYPE")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_TYPE")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='EngineType' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_ENGINE_TYPE")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_ENGINE_TYPE")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Color' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="COLOR")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="COLOR")</annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='InsuranceGroup' and @type='common:RefData']">
-            <annox:annotate target="field">@com.hubio.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_INSURANCE_GROUP")</annox:annotate>
+            <annox:annotate target="field">@com.integ.services.external.systems.mappings.api.RefDataMappingAware(source=SourceSystem.DEFINED, refDataType="VEHICLE_INSURANCE_GROUP")</annox:annotate>
         </jxb:bindings>
 
 
